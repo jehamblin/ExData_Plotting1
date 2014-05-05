@@ -13,25 +13,6 @@ dt2 <- datesTimes[which(dates == as.Date("2007-02-01") | dates== as.Date("2007-0
 
 setwd("~\\GitHub\\ExData_Plotting1")
 
-## Create plot 1
-
-hist(df2$Global_active_power,col="red",xlab="Global Active Power (kilowatts)",main="Global Active Power")
-dev.copy(png,file="plot1.png")
-dev.off()
-
-## Create plot 2
-plot(dt2,df2$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
-dev.copy(png,file="plot2.png")
-dev.off()
-
-## Create plot 3
-plot(dt2,df2$Sub_metering_1,type="l",xlab="",ylab="Energy sub metering")
-lines(dt2,df2$Sub_metering_2,type="l",col="red")
-lines(dt2,df2$Sub_metering_3,type="l",col="blue")
-legend("topright",col=c("black","red","blue"),lty=1,legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
-dev.copy(png,file="plot3.png")
-dev.off()
-
 ## Create plot 4
 par(mfrow=c(2,2),mar=c(4,4,2,1))
 plot(dt2,df2$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
@@ -48,4 +29,3 @@ plot(dt2,df2$Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactiv
 axis(2,at=c(0.0,0.1,0.2,0.3,0.4,0.5),labels=c(0.0,0.1,0.2,0.3,0.4,0.5))
 dev.copy(png,file="plot4.png")
 dev.off()
-
